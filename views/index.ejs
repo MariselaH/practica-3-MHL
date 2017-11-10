@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html ng-app="biblioApp">
+
+  <head>
+  	
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  
+  </head>
+  <body ng-controller="LibroCtrl">
+    <h1> <p class="bg-success text-center" > PRACTICA #3</p> </h1>
+
+  <!--
+    <input type="text" ng-model="titulo">
+    <div ng-repeat="libro in libros">  <!--tipo for each
+      <p>Titulo:  <strong>{{libro.titulo}}</strong></p>
+      <p>Autor:   <strong>{{libro.autor}}</strong></p>
+      <p>Anio:    <strong>{{libro.anio}}</strong></p>
+      <p>Genero:  <strong>{{libro.genero}}</strong></p>
+    </div> -->
+  <div class="container">
+    <div class="row">
+       <div class="col-sm-6 text-center">
+
+    <!--FORMULARIO-->
+     <h3>FORMULARIO</h3>
+   <!-- <input type="text" ng-model="libro._id" placeholder="ID" id=texto><br>-->
+    <input type="text" ng-model="libro.titulo" placeholder="Titulo"><br>
+    <input type="text" ng-model="libro.autor" placeholder="Autor"><br>
+    <input type="text" ng-model="libro.anio" placeholder="Año"><br>
+    <input type="text" ng-model="libro.genero" placeholder=Genero><br>
+
+   <br>
+
+
+    <!--<div class="col-sm-4">-->
+    <!--BOTON GUARDAR-->
+    <button ng-click="addLibro()" class="btn btn-success">Guardar</button>
+     <!--BOTON CARGAR-->
+    <button ng-click="getLibros()" class="btn btn-success">Cargar</button>
+   
+    <!--BOTON PARA TRAER UN LIBRO EN ESPECIFICO-->
+    <button ng-click="updateLibro(libro)" class="btn btn-success">Actualizar</button>
+   </div>
+    <!--</div>-->
+    
+    <div class="col-sm-6">
+    <!--MUESTRA TODOS LOS LIBROS DE LA BASE DE DATOS-->
+    <!--ng-click="showLibro(libro)"-->
+    
+   
+    <div ng-repeat="libro in libros" ><div>
+    
+     <p>Titulo:  <strong>{{libro.titulo}}</strong></p>
+     <p>Autor:   <strong>{{libro.autor}}</strong></p>
+     <p>Anio:    <strong>{{libro.anio}}</strong></p>
+     <p>Genero:  <strong>{{libro.genero}}</strong></p>
+     <button ng-click="getById(libro._id)"    class="btn btn-success ">Buscar por Id</button><br>
+     <button ng-click="showLibro(libro)" class="btn btn-success ">Seleccionar</button><br>
+     <button ng-click="deleteLibro(libro._id)" class="btn btn-success">Eliminar</button><br>
+     <br>
+
+
+
+    </div>
+
+
+    </div>
+
+    
+    </div>
+
+    <!--Scripts-->
+    <script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <link type="text/javascript" href="/lib/bootstrap/dist/css/bootstrap.min.css"></link>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/js/services/biblioServ.js"></script>
+    <script type="text/javascript" src="/js/controllers/biblioCtrl.js"></script>
+	   <script type="text/javascript" src="/js/biblioAPP.js"></script>
+
+  </body>
+</html>
